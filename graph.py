@@ -1,9 +1,9 @@
-class Graph:
-    class Node:
-        def __init__(self, value):
-            self.value = value
-            self.edges = []
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.edges = []
 
+class Graph:
     def __init__(self, edges=None):
         if edges is None:
             edges = []
@@ -17,7 +17,7 @@ class Graph:
         return self.__repr__()
 
     def insertNode(self, value):
-        new_node = self.Node(value)
+        new_node = Node(value)
         self.nodes.append(new_node)
         return new_node
     
@@ -51,35 +51,3 @@ class Graph:
             if node_x and node_y:
                 node_x.edges.remove(node_y)
                 node_y.edges.remove(node_x)
-
-# Exemplo de uso:
-edges_iniciais = [(1, 2), (2, 3), (3, 4)]
-grafo = Graph(edges_iniciais)
-
-# Imprimindo a representação do grafo
-print("Grafo inicial:")
-print(grafo)
-
-# Adicionando mais arestas
-edges_adicionais = [(4, 5), (5, 6), (6, 1)]
-grafo.insertEdge(edges_adicionais)
-
-# Imprimindo a representação do grafo após a adição de arestas
-print("\nGrafo após adição de arestas:")
-print(grafo)
-
-# Excluindo uma aresta
-aresta_para_excluir = [(2, 3)]
-grafo.deleteEdge(aresta_para_excluir)
-
-# Imprimindo a representação do grafo após a exclusão de arestas
-print("\nGrafo após exclusão de arestas:")
-print(grafo)
-
-# Excluindo um nó
-no_para_excluir = 4
-grafo.deleteNode(no_para_excluir)
-
-# Imprimindo a representação do grafo após a exclusão de um nó
-print("\nGrafo após exclusão de um nó:")
-print(grafo)
