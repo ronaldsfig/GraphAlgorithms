@@ -1,4 +1,4 @@
-from graph import Graph
+from graphs.graph import Graph
 
 class WeightedGraph(Graph):
     def __init__(self, edges=None):

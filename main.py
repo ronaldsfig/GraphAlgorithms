@@ -1,4 +1,6 @@
-from weightedGraph import WeightedGraph
+import sys
+sys.path.insert(0, '/graphs')
+from graphs.weightedGraph import WeightedGraph
 
 casa_do_joao = 'J'
 armazem = 'A'
